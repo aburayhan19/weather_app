@@ -54,7 +54,9 @@ class _HomePageState extends State<HomePage> {
     });
   fetchWeatherData();
    }
+  // ignore: prefer_typing_uninitialized_variables
   var latitude;
+   // ignore: prefer_typing_uninitialized_variables
    var longitude;
    Map<String, dynamic>?weatherMap;
   Map<String, dynamic>?forecastMap;
@@ -164,12 +166,22 @@ const SizedBox(height: 10,),
               width: size.width*0.50,
               margin: const EdgeInsets.only(left: 10.0,bottom: 10.0),
               padding: const EdgeInsets.symmetric(vertical: 20.0),
-              decoration: BoxDecoration(color: Colors.green,borderRadius: BorderRadius.circular(20.0)),
-              child: Column(mainAxisAlignment: MainAxisAlignment.center,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20.0),
+              // gradient: const LinearGradient(colors: [
+              //   Color(0xffdc2430),
+              //   Color(0xff7b4397),
+              // ],
+              //     begin: Alignment.bottomCenter ,
+              //   end: Alignment.topCenter,
+              //   stops: [0.20, 0.80]),
+                color: const Color(0xff9469ad),
+              ),
+              child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                 Text(Jiffy(forecastMap!['list'][index]['dt_txt']).format('EEE, h:mm'),style: myTxtStyl(18, FontWeight.normal,Colors.white)),
                     const SizedBox(height: 10.0),
-                    Image.asset('images/${forecastMap!['list'][index]['weather'][0]['icon']}.png',width: size.width*0.25,),
+                    Image.asset('images/forecast/${forecastMap!['list'][index]['weather'][0]['icon']}.png',width: size.width*0.25,),
                     const SizedBox(height: 10.0),
                     Text("${forecastMap!['list'][index]['main']['temp_min']} / ${forecastMap!['list'][index]['main']['temp_max']}\u00B0c",style: myTxtStyl(15, FontWeight.normal,Colors.white)),
                     const SizedBox(height: 10.0),
