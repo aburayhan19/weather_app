@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
 import 'package:jiffy/jiffy.dart';
+import 'package:weather_app/splash_window.dart';
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -179,7 +180,7 @@ const SizedBox(height: 10,),
           }),),
 
         ],
-      ): Center(child: Image.asset('images/weather.png',width: size.width*0.4)),
+      ): const SplashWindow()
     );
   }
 //   @override
