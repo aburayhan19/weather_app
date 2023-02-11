@@ -104,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           child: Container(
                             width: size.width * 0.92,
-                            padding: const EdgeInsets.only(top: 45.0),
+                            // padding: const EdgeInsets.only(top: 45.0),
                             decoration: BoxDecoration(
                               color: Colors.white.withOpacity(0.1),
                               borderRadius: BorderRadius.circular(20),
@@ -114,15 +114,19 @@ class _HomePageState extends State<HomePage> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 10),
-                                  child: Text(
-                                      weatherMap!['name']
-                                          .toString()
-                                          .toUpperCase(),
-                                      style: myTxtStyl(
-                                          40, FontWeight.bold, Colors.white)),
-                                ),
+                                // Padding(
+                                  // padding: const EdgeInsets.only(top: 10),
+                                  // child: 
+                                  SafeArea(
+                                    child: Text(
+                                        weatherMap!['name']
+                                            .toString()
+                                            .toUpperCase(),
+                                        style: myTxtStyl(
+                                            40, FontWeight.bold, Colors.white)),
+                                  ),
+                                // ),
+                                
                                 Text(
                                     Jiffy(DateTime.now())
                                         .format('EEEE, do MMMM'),
